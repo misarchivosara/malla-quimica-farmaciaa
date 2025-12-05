@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const barraMalla = document.getElementById('progreso-malla');
     const ramosAprobadosTexto = document.getElementById('ramos-aprobados');
     
-    // Total de créditos de la carrera (Aprox)
+    // Total aproximado de créditos (ajustable)
     const totalSCT = 300; 
 
-    // Inicializamos
+    // Inicializamos el sistema
     actualizarEstadoBloqueos();
 
     // Eventos Click
@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function toggleAsignatura(elemento) {
+        // Seguridad: si está bloqueada, no hacer nada
         if (elemento.classList.contains('bloqueada')) return;
 
         elemento.classList.toggle('aprobada');
@@ -33,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const requisitos = asignatura.getAttribute('data-requisito');
 
             if (requisitos) {
+                // Convertir la lista de requisitos en un array (ej: "REQ1,REQ2")
                 const listaRequisitos = requisitos.split(',');
                 let requisitosCumplidos = true;
 
@@ -60,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const asignaturasAprobadas = document.querySelectorAll('.asignatura.aprobada');
         
         asignaturasAprobadas.forEach(asignatura => {
+            // El "+" convierte texto a número
             sctAprobados += parseInt(asignatura.getAttribute('data-sct'));
         });
         
@@ -70,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const porcentajeSCT = (sctAprobados / totalSCT) * 100;
         barraSCT.style.width = porcentajeSCT + "%";
 
-        // 2. Avance Malla (Ramos)
+        // 2. Avance Malla (Conteo de Ramos)
         const totalRamos = asignaturas.length;
         const ramosAprobados = asignaturasAprobadas.length;
         const porcentajeMalla = (ramosAprobados / totalRamos) * 100;
@@ -80,6 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
         barraMalla.style.width = porcentajeMalla + "%";
     }
 
+    // Función pequeña para animar los números al subir
     function animateValue(obj, start, end, duration) {
         let startTimestamp = null;
         const step = (timestamp) => {
