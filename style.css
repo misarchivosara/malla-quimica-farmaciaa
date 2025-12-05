@@ -1,0 +1,221 @@
+/* --- Variables de Color Pastel Aesthetic --- */
+:root {
+    --pastel-azul: #d4e6f1;   /* Celeste pálido (Disciplinar) */
+    --pastel-amarillo: #fef9c3; /* Amarillo pastel (Profesional) */
+    --pastel-durazno: #fadec9;  /* Durazno (Gestión) */
+    --pastel-menta: #d1f2eb;   /* Menta pastel (Integral) */
+    
+    --locked-gray: #e6e6e6;   /* Color para bloqueados */
+    --text-dark: #5a4a4f;     /* Gris cálido oscuro */
+    --text-light: #8c7b80;    /* Gris cálido claro */
+}
+
+/* --- Estilos Generales --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    margin: 0;
+    padding: 30px;
+    color: var(--text-dark);
+}
+
+/* --- Header y Panel de Estadísticas --- */
+header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+h1 {
+    color: #d8839d;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.panel-stats {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+.stat-card {
+    background: white;
+    padding: 20px 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(216, 131, 157, 0.1);
+    flex: 1;
+    min-width: 250px;
+    border: 1px solid rgba(255,255,255,0.8);
+}
+
+.stat-titulo {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-light);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.stat-valor {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.stat-total {
+    font-size: 1rem;
+    color: #ccc;
+    font-weight: 400;
+}
+
+.stat-detalle {
+    margin-top: 8px;
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+/* Barras de progreso */
+.barra-contenedor {
+    height: 10px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.barra-relleno {
+    height: 100%;
+    width: 0%;
+    transition: width 0.8s ease;
+    border-radius: 10px;
+}
+.barra-relleno.azul { background: linear-gradient(90deg, #d4e6f1, #4299e1); }
+.barra-relleno.rosa { background: linear-gradient(90deg, #fad0c4, #ff9a9e); }
+
+/* Leyenda de Colores */
+.leyenda-colores {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+.item-leyenda { display: flex; align-items: center; }
+.color-box { width: 12px; height: 12px; border-radius: 50%; margin-right: 6px; }
+.color-box.azul { background: var(--pastel-azul); }
+.color-box.amarillo { background: var(--pastel-amarillo); }
+.color-box.durazno { background: var(--pastel-durazno); }
+.color-box.menta { background: var(--pastel-menta); }
+
+/* --- Contenedor de la Malla --- */
+.contenedor-malla {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    padding: 20px 10px 40px 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #d8839d #f0f0f0;
+}
+
+.semestre {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 220px;
+}
+
+h3 {
+    text-align: center;
+    color: var(--text-light);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+/* --- Tarjetas de Asignaturas --- */
+.asignatura {
+    padding: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    position: relative;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid transparent;
+}
+
+.asignatura:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.codigo {
+    font-size: 0.7rem;
+    font-weight: 600;
+    opacity: 0.8;
+    margin-bottom: 4px;
+}
+
+h4 {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    line-height: 1.3;
+}
+
+/* --- Colores por Categoría --- */
+.asignatura.cat-disciplinar { background-color: var(--pastel-azul); color: #2c5282; }
+.asignatura.cat-disciplinar .codigo { color: #2b6cb0; }
+
+.asignatura.cat-profesional { background-color: var(--pastel-amarillo); color: #744210; }
+.asignatura.cat-profesional .codigo { color: #d69e2e; }
+
+.asignatura.cat-gestion { background-color: var(--pastel-durazno); color: #7b341e; }
+.asignatura.cat-gestion .codigo { color: #dd6b20; }
+
+.asignatura.cat-integral { background-color: var(--pastel-menta); color: #234e52; }
+.asignatura.cat-integral .codigo { color: #319795; }
+
+/* --- Estado: APROBADA --- */
+.asignatura.aprobada {
+    border-color: #fff;
+    box-shadow: inset 0 0 0 2px rgba(255,255,255,0.6), 0 5px 15px rgba(0,0,0,0.1);
+}
+.asignatura.aprobada::after {
+    content: '✓';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    opacity: 0.5;
+}
+
+/* --- Estado: BLOQUEADA (Candado) --- */
+.asignatura.bloqueada {
+    background-color: var(--locked-gray) !important;
+    color: #a0a0a0 !important;
+    opacity: 0.8;
+    pointer-events: none;
+    filter: grayscale(1);
+    box-shadow: none;
+}
+.asignatura.bloqueada .codigo { color: #b0b0b0; }
+.asignatura.bloqueada::after {
+    content: '🔒';
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    opacity: 0.4;
+}
