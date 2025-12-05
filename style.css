@@ -1,12 +1,12 @@
-/* --- Variables Aesthetic Pink (Contraste Perfecto) --- */
+/* --- Variables Aesthetic Pink (Paleta con Contraste) --- */
 :root {
     /* --- COLORES DE ÁREAS --- */
     
-    /* Disciplinar: Rosa Algodón de Azúcar (Más intenso que antes) */
+    /* Disciplinar: Rosa Algodón de Azúcar (Intenso) */
     --color-disciplinar: #ffcce0;  
     --text-disciplinar:  #9c4866; 
 
-    /* Profesional: Rosa Cherry (Más oscurito) */
+    /* Profesional: Rosa Cherry (Diferenciado pero letra oscura) */
     --color-profesional: #ff9eb5;  
     --text-profesional:  #8a2c45; 
 
@@ -32,8 +32,8 @@ body {
     margin: 0;
     padding: 30px;
     
-    /* FONDO DE LUNARES (Polka Dots) */
-    background-color: #fff0f5; /* Un fondo un pelín más claro para que contraste */
+    /* FONDO DE LUNARES */
+    background-color: #fff0f5; 
     background-image: radial-gradient(circle, #ffffff 40%, transparent 40%);
     background-size: 30px 30px;
 }
@@ -157,7 +157,6 @@ h1 {
     flex-direction: column;
     gap: 15px;
     min-width: 240px;
-    /* Fondo un poco más blanco para que resalten los colores de los ramos */
     background: rgba(255,255,255,0.7);
     padding: 15px;
     border-radius: 20px;
@@ -187,7 +186,7 @@ h3 {
     flex-direction: column;
     justify-content: center;
     
-    /* BORDE BLANCO: Esto es clave para que se separen del fondo */
+    /* BORDE BLANCO para resaltar del fondo */
     border: 3px solid #ffffff; 
 }
 
@@ -195,7 +194,7 @@ h3 {
     transform: translateY(-5px) scale(1.02);
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     z-index: 10;
-    border-color: var(--fucsia-pop); /* Al pasar el mouse se pone fucsia el borde */
+    border-color: var(--fucsia-pop);
 }
 
 /* Header interno (Código y Badge) */
@@ -230,20 +229,15 @@ h4 {
 }
 
 /* --- COLORES APLICADOS --- */
-
-/* Disciplinar: Rosa Algodón (Se nota más) */
 .asignatura.cat-disciplinar { background-color: var(--color-disciplinar); color: var(--text-disciplinar); }
 .asignatura.cat-disciplinar .sct-badge { color: var(--text-disciplinar); }
 
-/* Profesional: Rosa Cherry */
 .asignatura.cat-profesional { background-color: var(--color-profesional); color: var(--text-profesional); }
 .asignatura.cat-profesional .sct-badge { color: var(--text-profesional); }
 
-/* Gestión: Durazno */
 .asignatura.cat-gestion { background-color: var(--color-gestion); color: var(--text-gestion); }
 .asignatura.cat-gestion .sct-badge { color: var(--text-gestion); }
 
-/* Integral: Lila */
 .asignatura.cat-integral { background-color: var(--color-integral); color: var(--text-integral); }
 .asignatura.cat-integral .sct-badge { color: var(--text-integral); }
 
@@ -252,7 +246,6 @@ h4 {
 .asignatura.aprobada {
     border-color: #fff;
     box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
-    /* Degradado sutil para darle brillo */
     background-image: linear-gradient(135deg, rgba(255,255,255,0.4), rgba(255,255,255,0));
 }
 
